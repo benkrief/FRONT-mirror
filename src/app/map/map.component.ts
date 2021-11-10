@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
-      zoom: 6,
+      zoom: 5,
       center: [this.lng, this.lat]
     });
     this.map.addControl(new mapboxgl.NavigationControl());
