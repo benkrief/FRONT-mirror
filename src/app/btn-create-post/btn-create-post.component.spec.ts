@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostCreationComponent } from './post-creation.component';
+import { BtnCreatePostComponent } from './btn-create-post.component';
 
-describe('PostCreationComponent', () => {
-  let component: PostCreationComponent;
-  let fixture: ComponentFixture<PostCreationComponent>;
+describe('FeedComponent', () => {
+  let component: BtnCreatePostComponent;
+  let fixture: ComponentFixture<BtnCreatePostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostCreationComponent ]
+      declarations: [ BtnCreatePostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostCreationComponent);
+    fixture = TestBed.createComponent(BtnCreatePostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

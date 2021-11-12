@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeedComponent } from './feed.component';
+import { ModalPostCreationComponent } from './modal-post-creation.component';
 
-describe('FeedComponent', () => {
-  let component: FeedComponent;
-  let fixture: ComponentFixture<FeedComponent>;
+describe('PostCreationComponent', () => {
+  let component: ModalPostCreationComponent;
+  let fixture: ComponentFixture<ModalPostCreationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeedComponent ]
+      declarations: [ ModalPostCreationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FeedComponent);
+    fixture = TestBed.createComponent(ModalPostCreationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

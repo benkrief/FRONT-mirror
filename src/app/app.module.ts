@@ -7,20 +7,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HelloWorldComponent} from './Component/hello-world/hello-world.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PostCreationComponent } from './post-creation/post-creation.component';
-import {PostCreationService} from "./Services/post-creation-service/post-creation.service";
+import { ModalPostCreationComponent } from './modal-post-creation/modal-post-creation.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FeedComponent } from './feed/feed.component';
+import { BtnCreatePostComponent } from './btn-create-post/btn-create-post.component';
 import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    FeedComponent,
-    PostCreationComponent,
-    FeedComponent
-
+    BtnCreatePostComponent,
+    ModalPostCreationComponent,
+    BtnCreatePostComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,7 @@ import {MatButtonModule} from "@angular/material/button";
     ReactiveFormsModule,
     MatButtonModule,
   ],
-  providers: [PostCreationService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import {PostCreationService} from "../Services/post-creation-service/post-creation.service";
 import {FormControl, FormGroup} from "@angular/forms";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-post-creation',
-  templateUrl:  './post-creation.component.html',
-  styleUrls: ['./post-creation.component.scss']
+  templateUrl:  './modal-post-creation.component.html',
+  styleUrls: ['./modal-post-creation.component.scss']
 })
-export class PostCreationComponent implements OnInit {
+export class ModalPostCreationComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<PostCreationComponent>) {}// service ne doit pas etre public todo: voir pourquoi ça marche pas en private n
+  constructor( public dialogRef: MatDialogRef<ModalPostCreationComponent>) {}// service ne doit pas etre public todo: voir pourquoi ça marche pas en private n
 
   ngOnInit(): void {
   }
@@ -37,6 +36,4 @@ export class PostCreationComponent implements OnInit {
   postClickCancel() {
     this.dialogRef.close();
   }
-
-
 }
