@@ -1,0 +1,9 @@
+<form #postForm="ngForm" (ngSubmit)="createPost(postForm)">
+  <input type="text" ngModel name="titre" required>
+  <input type="text" ngModel name="description" required>
+  <button type="submit" [disabled]="postForm.invalid">
+    <span> Ajout</span>
+  </button>
+</form>
+
+<app-post-list></app-post-list>
