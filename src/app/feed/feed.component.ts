@@ -1,4 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {PostCreationComponent} from "../post-creation/post-creation.component";
+import {MatDialog} from "@angular/material/dialog";
+
 
 @Component({
   selector: 'app-feed',
@@ -6,12 +9,16 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
-  @Input() name: string;
-  @Input() imgPath: string;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
+  onCreate() {
+    this.dialog.open(PostCreationComponent)
+  }
+
+
 
 }

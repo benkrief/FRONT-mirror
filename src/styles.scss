@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+div.container{
+  margin: 0px 40px;
+}
+
+.fill-remaining-space{
+  // fills the remaining space by using flexbook every toolbar row uses this
+  flex: 1 1 auto;
+}
+
+form.normal-form{
+  margin:10px;
+}
+
+.controles-container{
+  width: 100%;
+  padding: 5%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

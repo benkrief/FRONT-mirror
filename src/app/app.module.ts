@@ -8,21 +8,31 @@ import {AppComponent} from './app.component';
 import {HelloWorldComponent} from './Component/hello-world/hello-world.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PostCreationComponent } from './post-creation/post-creation.component';
+import {PostCreationService} from "./Services/post-creation-service/post-creation.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FeedComponent } from './feed/feed.component';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    PostCreationComponent
+    FeedComponent,
+    PostCreationComponent,
+    FeedComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [PostCreationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
