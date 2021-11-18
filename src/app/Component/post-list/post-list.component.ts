@@ -20,16 +20,6 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appState$ = this.postService.posts$
-      .pipe(
-        map(response => {
-          this.dataSubject.next(response)
-          return {state: this.stateEnum.LOADED_STATE, appData: {...response, data: {posts: response.data.posts.reverse()}}}
-        }),
-        startWith({state: this.stateEnum.LOADING_STATE}),
-        catchError((error: string) => {
-          return of({state: this.stateEnum.ERROR_STATE, error})
-        })
-      );
+
   }
 }

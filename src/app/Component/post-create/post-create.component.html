@@ -5,5 +5,16 @@
     <span> Ajout</span>
   </button>
 </form>
+<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
+  <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
+    <div *ngFor="let post of appState.appData.data.posts">
+      <p>{{post.titre}} -   {{post.description}}</p>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
+    <h1>Error</h1>
+  </ng-container>
 
-<app-post-list></app-post-list>
+</ng-container>
+
+

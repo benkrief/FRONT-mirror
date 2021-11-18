@@ -15,7 +15,7 @@ import {StateEnum} from 'src/app/enum/state.enum';
 })
 export class PostCreateComponent implements OnInit {
   appState$: Observable<State<Response>>;
-  readonly StateEnum = StateEnum;
+  readonly stateEnum = StateEnum;
   private dataSubject = new BehaviorSubject<Response>(null);
 
   private isLoading = new BehaviorSubject<Boolean>(false);
@@ -25,24 +25,34 @@ export class PostCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.appState$ = this.postService.get$
+      .pipe(
+        map(response => {
+          this.dataSubject.next(response)
+          return {state: this.stateEnum.LOADED_STATE, appData: {...response, data: {posts: response.data.posts}}}
+        }),
+        startWith({state: this.stateEnum.LOADING_STATE}),
+        catchError((error: string) => {
+          return of({state: this.stateEnum.ERROR_STATE, error})
+        })
+      );
   }
 
   createPost(postForm: NgForm): void {
     console.log(postForm.value);
-    this.appState$ = this.postService.create$(postForm.value as Post)
-      .pipe(
-        map(response => {
-          console.log(response)
-          this.dataSubject.next(
-            {...response, data: {posts: [response.data.post, ...this.dataSubject.value.data.posts]}}
-          );
-          postForm.resetForm({});
-          return {state: this.StateEnum.LOADED_STATE, appData: this.dataSubject.value}
-        }),
-        startWith({state: this.StateEnum.LOADED_STATE, appData: this.dataSubject.value}),
-        catchError((error: string) => {
-          return of({state: this.StateEnum.ERROR_STATE, error})
-        })
-      )
+    this.appState$ = this.postService.create$(postForm.value as Post).pipe(
+      map(response => {
+        console.log(response)
+        this.dataSubject.next(
+          {...response, data: {posts: [response.data.post, ...this.dataSubject.value.data.posts]}}
+        );
+        postForm.resetForm({});
+        return {state: this.stateEnum.LOADED_STATE, appData: this.dataSubject.value}
+      }),
+      startWith({state: this.stateEnum.LOADED_STATE, appData: this.dataSubject.value}),
+      catchError((error: string) => {
+        return of({state: this.stateEnum.ERROR_STATE, error})
+      })
+    )
   }
 }

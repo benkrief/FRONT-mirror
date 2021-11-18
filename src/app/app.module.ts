@@ -9,6 +9,7 @@ import {PostListComponent} from './Component/post-list/post-list.component';
 import {PostCreateComponent} from './Component/post-create/post-create.component';
 import {FormsModule} from "@angular/forms";
 import { HomePageComponent } from './home-page/home-page.component';
+import { PhotoListComponent } from './Component/photo-list/photo-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     HelloWorldComponent,
     PostListComponent,
     PostCreateComponent,
-    HomePageComponent
+    HomePageComponent,
+    PhotoListComponent
   ],
   imports: [
     BrowserModule,

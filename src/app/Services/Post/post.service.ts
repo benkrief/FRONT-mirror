@@ -15,7 +15,7 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  posts$ = <Observable<Response>>this.http.get<Response>(`${this.apiUrl}/list`).pipe(
+  get$ = <Observable<Response>>this.http.get<Response>(`${this.apiUrl}/list`).pipe(
     tap(console.log),
     catchError(this.handleError)
   );
@@ -36,5 +36,4 @@ export class PostService {
     console.log(error)
     return throwError(`Une erreur est survenue - Code de l'erreur: ${error.status} `);
   };
-
 }
