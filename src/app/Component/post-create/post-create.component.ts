@@ -14,9 +14,9 @@ import {StateEnum} from 'src/app/enum/state.enum';
   styleUrls: ['./post-create.component.scss']
 })
 export class PostCreateComponent implements OnInit {
-  appState$: Observable<State<Response>>;
+  appState$: Observable<State<Response<Post>>>;
   readonly stateEnum = StateEnum;
-  private dataSubject = new BehaviorSubject<Response>(null);
+  private dataSubject = new BehaviorSubject<Response<Post>>(null);
 
   private isLoading = new BehaviorSubject<Boolean>(false);
   isLoading$ = this.isLoading.asObservable();
@@ -28,8 +28,11 @@ export class PostCreateComponent implements OnInit {
     this.appState$ = this.postService.get$
       .pipe(
         map(response => {
+          console.log("here")
+          console.error(response)
+          console.error(this.appState$)
           this.dataSubject.next(response)
-          return {state: this.stateEnum.LOADED_STATE, appData: {...response, data: {posts: response.data.posts}}}
+          return {state: this.stateEnum.LOADED_STATE, appData: {...response, data: {posts: response.data}}}
         }),
         startWith({state: this.stateEnum.LOADING_STATE}),
         catchError((error: string) => {
@@ -44,7 +47,7 @@ export class PostCreateComponent implements OnInit {
       map(response => {
         console.log(response)
         this.dataSubject.next(
-          {...response, data: {posts: [response.data.post, ...this.dataSubject.value.data.posts]}}
+          {...response, data: {results: [response.data.result, ...this.dataSubject.value.data.results]}}
         );
         postForm.resetForm({});
         return {state: this.stateEnum.LOADED_STATE, appData: this.dataSubject.value}

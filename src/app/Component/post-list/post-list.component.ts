@@ -5,6 +5,7 @@ import {State} from "../../Model/State";
 import {Response} from "../../Model/Response";
 import {StateEnum} from "../../enum/state.enum";
 import {catchError, map, startWith} from "rxjs/operators";
+import {Post} from "../../Model/Post";
 
 @Component({
   selector: 'app-post-list',
@@ -12,14 +13,13 @@ import {catchError, map, startWith} from "rxjs/operators";
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  appState$: Observable<State<Response>>;
+  appState$: Observable<State<Response<Post>>>;
   readonly stateEnum = StateEnum;
-  private dataSubject = new BehaviorSubject<Response>(null);
+  private dataSubject = new BehaviorSubject<Response<Post>>(null);
 
   constructor(private postService: PostService) {
   }
 
   ngOnInit(): void {
-
   }
 }

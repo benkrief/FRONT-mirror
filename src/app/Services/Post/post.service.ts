@@ -15,19 +15,19 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  get$ = <Observable<Response>>this.http.get<Response>(`${this.apiUrl}/list`).pipe(
+  get$ = <Observable<Response<Post>>>this.http.get<Response<Post>>(`${this.apiUrl}/list`).pipe(
     tap(console.log),
     catchError(this.handleError)
   );
 
-  create$ = (post: Post) => <Observable<Response>>
-    this.http.post<Response>(`${this.apiUrl}/create`, post)
+  create$ = (post: Post) => <Observable<Response<Post>>>
+    this.http.post<Response<Post>>(`${this.apiUrl}/create`, post)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
       );
 
-  delete$ = (postUUID: string) => <Observable<Response>>this.http.delete<Response>(`${this.apiUrl}/delete/${postUUID}`).pipe(
+  delete$ = (postUUID: string) => <Observable<Response<Post>>>this.http.delete<Response<Post>>(`${this.apiUrl}/delete/${postUUID}`).pipe(
     tap(console.log),
     catchError(this.handleError)
   );
