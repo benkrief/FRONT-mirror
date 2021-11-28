@@ -8,6 +8,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatGridList} from "@angular/material/grid-list";
 import {ReactiveFormsModule} from "@angular/forms";
+import {FeedComponent} from "../feed/feed.component";
+import {PostComponent} from "../post/post.component";
 
 
 @NgModule({

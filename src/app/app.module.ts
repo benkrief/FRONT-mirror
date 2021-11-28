@@ -11,6 +11,9 @@ import { ModalPostCreationComponent } from './modal-post-creation/modal-post-cre
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BtnCreatePostComponent } from './btn-create-post/btn-create-post.component';
 import {MatButtonModule} from "@angular/material/button";
+import { PostComponent } from './post/post.component';
+import { FeedComponent } from './feed/feed.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -18,18 +21,21 @@ import {MatButtonModule} from "@angular/material/button";
     HelloWorldComponent,
     BtnCreatePostComponent,
     ModalPostCreationComponent,
-    BtnCreatePostComponent
+    BtnCreatePostComponent,
+    PostComponent,
+    FeedComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        ScrollingModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

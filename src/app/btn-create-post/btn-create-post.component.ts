@@ -4,7 +4,7 @@ import {MatDialog} from "@angular/material/dialog";
 
 
 @Component({
-  selector: 'app-feed',
+  selector: 'app-btn-create-post',
   templateUrl: './btn-create-post.component.html',
   styleUrls: ['./btn-create-post.component.scss']
 })
