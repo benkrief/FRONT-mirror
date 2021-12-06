@@ -1,11 +1,10 @@
-import {Post} from "./Post";
 
-export interface Response {
+export interface Response<T> {
   timeStamp: Date;
   statusCode: number;
   status: string;
   reason: string;
   message: string;
   developerMessage: string;
-  data: { posts: Post[], post?: Post }
+  data: { results: T[], result?: T }
 }

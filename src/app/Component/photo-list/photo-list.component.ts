@@ -4,7 +4,8 @@ import {State} from "../../Model/State";
 import {Response} from "../../Model/Response";
 import {StateEnum} from "../../enum/state.enum";
 import {PhotoService} from "../../Services/Photo/photo.service";
-import {catchError, map, startWith} from "rxjs/operators";
+import {Photo} from "../../Model/Photo";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-photo-list',
@@ -12,25 +13,30 @@ import {catchError, map, startWith} from "rxjs/operators";
   styleUrls: ['./photo-list.component.scss']
 })
 export class PhotoListComponent implements OnInit {
-  appState$: Observable<State<Response>>;
+  appState$: Observable<State<Response<Photo>>>;
+  imageSource;
   readonly stateEnum = StateEnum;
-  private dataSubject = new BehaviorSubject<Response>(null);
+  private dataSubject = new BehaviorSubject<Response<Photo>>(null);
 
-  constructor(private photoService: PhotoService) {
+  constructor(private photoService: PhotoService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
-    this.appState$ = this.photoService.get$
-      .pipe(
-        map(response => {
-          this.dataSubject.next(response)
-          return {state: this.stateEnum.LOADED_STATE, appData: {...response, data: {posts: response.data.posts}}}
-        }),
-        startWith({state: this.stateEnum.LOADING_STATE}),
-        catchError((error: string) => {
-          return of({state: this.stateEnum.ERROR_STATE, error})
-        })
-      );
+    this.photoService.get$
+      .subscribe(
+        (val) => {
+          val.data.results.forEach(value => {
+            this.imageSource = this.sanitizer.bypassSecurityTrustResourceUrl(`data:${value.contentType};base64, ${value.data}`);
+              console.log(this.imageSource)
+            }
+          )
+        },
+        response => {
+          console.log("POST in error", response);
+        },
+        () => {
+          console.log("POST observable is now completed.");
+        });
   }
 
 }
