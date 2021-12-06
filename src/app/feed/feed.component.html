@@ -1,6 +1,11 @@
+<div class="baniere">
+  <app-btn-create-post></app-btn-create-post>
+</div>
+
 <cdk-virtual-scroll-viewport itemSize="100" class="container">
-  <div *cdkVirtualFor=" let description of descriptions;" class="description">
-    <div>{{description}}</div>
+  <div *cdkVirtualFor=" let post of posts;" class="description" >
+    <div>{{post.titre}}</div>
+    <div>{{post.description}}</div>
   </div>
 </cdk-virtual-scroll-viewport>
 
