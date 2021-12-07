@@ -5,7 +5,7 @@ import {Response} from "../../Model/Response";
 import {PostService} from "../../Services/Post/post.service";
 import {Post} from "../../Model/Post";
 import {catchError, map, startWith} from "rxjs/operators";
-import {StateEnum} from 'src/app/enum/state.enum';
+import {StateEnum} from 'src/app/Enum/state.enum';
 import {NgForm} from "@angular/forms";
 
 @Component({

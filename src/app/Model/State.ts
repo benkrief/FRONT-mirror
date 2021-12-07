@@ -1,4 +1,4 @@
-import {StateEnum} from "../enum/state.enum";
+import {StateEnum} from "../Enum/state.enum";
 
 export interface State<T> {
   state: StateEnum;

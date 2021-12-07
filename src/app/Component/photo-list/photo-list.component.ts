@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject, Observable, of} from "rxjs";
 import {State} from "../../Model/State";
 import {Response} from "../../Model/Response";
-import {StateEnum} from "../../enum/state.enum";
+import {StateEnum} from "../../Enum/state.enum";
 import {PhotoService} from "../../Services/Photo/photo.service";
 import {Photo} from "../../Model/Photo";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -26,7 +26,7 @@ export class PhotoListComponent implements OnInit {
       .subscribe(
         (val) => {
           val.data.results.forEach(value => {
-            this.imageSource = this.sanitizer.bypassSecurityTrustResourceUrl(`data:${value.contentType};base64, ${value.data}`);
+              this.imageSource = this.sanitizer.bypassSecurityTrustResourceUrl(`data:${value.contentType};base64, ${value.data}`);
               console.log(this.imageSource)
             }
           )
@@ -38,5 +38,4 @@ export class PhotoListComponent implements OnInit {
           console.log("POST observable is now completed.");
         });
   }
-
 }

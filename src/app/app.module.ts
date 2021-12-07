@@ -6,10 +6,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './Component/post-list/post-list.component';
 import {PostCreateComponent} from './Component/post-create/post-create.component';
-import {FormsModule} from "@angular/forms";
-import { HomePageComponent } from './home-page/home-page.component';
-import { PhotoListComponent } from './Component/photo-list/photo-list.component';
-import { NotFoundComponent } from './Component/not-found/not-found.component';
+import {HomePageComponent} from './Component/home-page/home-page.component';
+import {PhotoListComponent} from './Component/photo-list/photo-list.component';
+import {NotFoundComponent} from './Component/not-found/not-found.component';
+
+import {ModalPostCreationComponent} from './Component/modal-post-creation/modal-post-creation.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BtnCreatePostComponent} from './Component/btn-create-post/btn-create-post.component';
+import {MatButtonModule} from "@angular/material/button";
+import {FeedComponent} from './Component/feed/feed.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
+import {MaterialModule} from "./Material/material.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -18,13 +26,21 @@ import { NotFoundComponent } from './Component/not-found/not-found.component';
     PostCreateComponent,
     HomePageComponent,
     PhotoListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BtnCreatePostComponent,
+    ModalPostCreationComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

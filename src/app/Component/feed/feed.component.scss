@@ -1,0 +1,25 @@
+.description {
+  height: 100px;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px;
+  width: 400px;
+}
+
+.titre {
+  height: 100px;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.container {
+  height: 400px;
+}
+
+.baniere {
+  flex-direction: row;
+  position: sticky;
+}

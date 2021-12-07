@@ -1,4 +1,3 @@
-
 export interface Response<T> {
   timeStamp: Date;
   statusCode: number;
