@@ -4,17 +4,17 @@
       <div class="controles-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
-          <input formControlName="titre" matInput placeholder="Titre">
+          <input formControlName="titre" matInput placeholder="Titre" name="title" required>
         </mat-form-field>
         <mat-form-field>
-          <input formControlName="description" matInput placeholder="Description">
+          <input formControlName="description" matInput placeholder="Description" name="description" required>
         </mat-form-field>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
       <div class="controles-container">
         <button (click)="postClickCancel()">Annuler</button>
-        <button>Poster</button>
+        <button type="submit" [disabled]="form.invalid">Poster</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, NgForm} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
+import {Post} from "../../Model/Post";
+import {catchError, map, startWith} from "rxjs/operators";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-post-creation',
@@ -28,6 +31,25 @@ export class ModalPostCreationComponent implements OnInit {
       description: ''
     });
   }
+
+  createPost(postForm: NgForm): void {
+    console.log(postForm.value);
+    this.appState$ = this.postService.create$(postForm.value as Post).pipe(
+      map(response => {
+        console.log(response)
+        this.dataSubject.next(
+          {...response, data: {results: [response.data.result, ...this.dataSubject.value.data.results]}}
+        );
+        postForm.resetForm({});
+        return {state: this.stateEnum.LOADED_STATE, appData: this.dataSubject.value}
+      }),
+      startWith({state: this.stateEnum.LOADED_STATE, appData: this.dataSubject.value}),
+      catchError((error: string) => {
+        return of({state: this.stateEnum.ERROR_STATE, error})
+      })
+    )
+  }
+
 
   postClickCancel() {
     this.dialogRef.close();
