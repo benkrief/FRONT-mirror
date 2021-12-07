@@ -15,9 +15,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BtnCreatePostComponent} from './Component/btn-create-post/btn-create-post.component';
 import {MatButtonModule} from "@angular/material/button";
 import {FeedComponent} from './Component/feed/feed.component';
-import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MaterialModule} from "./Material/material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     NotFoundComponent,
     BtnCreatePostComponent,
     ModalPostCreationComponent,
-    FeedComponent
+    FeedComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MaterialModule,
     ReactiveFormsModule,
     MatButtonModule,
-    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
