@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<header id="header">
-  <nav class="navbar navbar-light bg-light">
+<div id="header">
+  <nav class="navbar navbar-light bg-light header">
     <ul>
       <li><a><img src="/assets/Images/logo_bis.png" width="70" height="52" margin-top="12"></a></li>
       <li>
@@ -11,12 +10,16 @@
         <a routerLink="/home" routerLinkActive="active">
           <i class="fa fa-3x fa-home" aria-hidden="true"></i>
         </a></li>
-      <li><a href=""><i class="fa fa-3x fa-map-marker" aria-hidden="true"></i></a></li>
+      <li><a routerLink="/map" routerLinkActive="active">
+        <i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>
+      </a></li>
       <li><a routerLink="/feed" routerLinkActive="active">
         <i class="fa fa-3x fa-safari" aria-hidden="true"></i>
       </a></li>
       <li><a href=""><i class="fa fa-3x fa-user" aria-hidden="true"></i></a></li>
-      <li><app-btn-create-post></app-btn-create-post></li>
+      <li>
+        <app-btn-create-post></app-btn-create-post>
+      </li>
     </ul>
   </nav>
-</header>
+</div>

@@ -69,7 +69,7 @@ input[type="button"].big,
   cursor: default;
   height:72px;
   line-height:72px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
 
@@ -100,5 +100,4 @@ input[type="button"].big,
 
 }
 #header nav > ul > li > a i {
-
 }

@@ -6,6 +6,7 @@ import {BehaviorSubject} from "rxjs";
 import {Response} from "../../Model/Response";
 import {Post} from "../../Model/Post";
 
+
 @Component({
   selector: 'app-post-creation',
   templateUrl: './modal-post-creation.component.html',
