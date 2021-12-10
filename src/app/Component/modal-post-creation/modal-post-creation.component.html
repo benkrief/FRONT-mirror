@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="normal-form" style="height: 300px" style="width: 300px" (ngSubmit)="createPost(form)">
+<form [formGroup]="form" class="normal-form" style="height: 300px" style="width: 300px">
   <mat-grid-list cols="1" rows="2" rowHeight="250px">
     <mat-grid-tile>
       <div class="controles-container">
@@ -13,7 +13,7 @@
     <mat-grid-tile>
       <div class="controles-container">
         <button (click)="postClickCancel()">Annuler</button>
-        <button type="submit" [disabled]="form.invalid">Poster</button>
+        <button type="submit" (click)="createPost(form)" [disabled]="form.invalid">Poster</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
