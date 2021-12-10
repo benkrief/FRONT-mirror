@@ -18,6 +18,11 @@ import {FeedComponent} from './Component/feed/feed.component';
 import {MaterialModule} from "./Material/material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.component';
+import { MapComponent } from './Component/map/map.component';
+import { MyItineraryComponent } from './Component/my-itinerary/my-itinerary.component';
+import {MatCardModule} from "@angular/material/card";
+import { BtnPlanMyTripComponent } from './Component/btn-plan-my-trip/btn-plan-my-trip.component';
+import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-my-trip-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -30,18 +35,23 @@ import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.
     BtnCreatePostComponent,
     ModalPostCreationComponent,
     FeedComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    MapComponent,
+    MyItineraryComponent,
+    BtnPlanMyTripComponent,
+    PlanMyTripPopUpComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatCardModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  APIEndpoint : 'http://localhost:8080'
+  APIEndpoint : 'http://localhost:8080',
+  mapBoxKey: "pk.eyJ1IjoiaWxsaW8iLCJhIjoiY2t3eXU2NHl1MHJvaTJxbW44MnA0c3A3bCJ9.131SrcfVw1iBDcKUskX52Q"
 };
 
 /*

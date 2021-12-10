@@ -4,11 +4,14 @@ import {PhotoListComponent} from "./Component/photo-list/photo-list.component";
 import {NotFoundComponent} from "./Component/not-found/not-found.component";
 import {HomePageComponent} from "./Component/home-page/home-page.component";
 import {FeedComponent} from "./Component/feed/feed.component";
+import {MapComponent} from "./Component/map/map.component";
+
 
 const routes: Routes = [
   {path: 'feed', component: FeedComponent},
   {path: 'create', component: PhotoListComponent},
   {path: 'home', component: HomePageComponent},
+  {path: 'map', component: MapComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent},
 ];
