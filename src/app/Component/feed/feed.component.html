@@ -1,8 +1,24 @@
-<div class="container">
-  <div *ngFor=" let post of posts;" class="description">
-    <div>{{post.title}}</div>
-    <div>{{post.description}}</div>
-  </div>
-</div>
-
-
+<section class="carousel">
+  <ul class="carousel-items">
+    <div class="carousel-item">
+      <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
+        <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
+          <div *ngFor="let post of appState.appData.data.results" class="card">
+            <h5 class="card-title">{{post.title}}</h5>
+            <img src="https://placeimg.com/572/322/animals" class="card-image"/>
+            <div class="card-button">
+              <a href=""><i class="fa fa-2x fa-map-marker" aria-hidden="true" style="color:black;"></i> Ajouter à mon
+                itineraire</a>
+            </div>
+            <div class="card-content">
+              <p>{{post.description}}</p>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
+          <h1>Error</h1>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ul>
+</section>

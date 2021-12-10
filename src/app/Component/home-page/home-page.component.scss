@@ -1,9 +1,9 @@
 body, input, select, textarea {
   font-size: 12pt;
+  margin: -2%;
 }
 
 body, input, select, textarea {
-  color: #646464;
   font-family: "Lato", Helvetica, sans-serif;
   font-size: 15pt;
   font-weight: 300;
@@ -11,11 +11,18 @@ body, input, select, textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #545454;
+  color: white;
   font-weight: 700;
   line-height: 1em;
   margin: 0 0 1em 0;
   letter-spacing: -0.01em;
+}
+
+.st {
+  color: antiquewhite;
+  font-weight: 600;
+  font-size: 2.5em;
+  margin-bottom: 1.75em;
 }
 
 ul {
@@ -28,7 +35,6 @@ ul li {
   padding-left: 0.5em;
 }
 
-input[type="submit"],
 input[type="reset"],
 input[type="button"],
 .button {
@@ -65,15 +71,11 @@ input[type="button"].big,
 #banner {
   background-attachment: fixed;
   background-color: #494d53;
-  //background-image:url("src/assets/Images/banner2.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879_1280.jpg");
   background-size: cover;
   color: #d1d2d4;
-  padding: 16em 0;
+  padding: 22em 0;
   text-align: center;
-}
-
-#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-  color: #ffffff;
 }
 
 #banner .button {
@@ -92,7 +94,71 @@ input[type="button"].big,
   padding: 0;
 }
 
-#banner p {
-  font-size: 2.5em;
-  margin-bottom: 1.75em;
+.title {
+  text-align: center;
+  color: black;
+  margin-top: 2%;
+  font-size: 4.5em;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 2.6em;
+  font-weight: 700;
+  align-items: center;
+  color: cornflowerblue;
+}
+
+.items {
+  display: flex;
+  position: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.item-content {
+  margin-left: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 3%;
+}
+
+#col {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/13/19/world-160811_1280.png");
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 14em;
+  padding-bottom: 15em;
+}
+
+.title-3 {
+  text-align: center;
+  color: black;
+  font-size: 4.5em;
+}
+
+.map-text {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.pin1 {
+  text-align: left;
+  margin-left: 20%;
+}
+
+.pin2 {
+  text-align: right;
+  margin-right: 25%;
+}
+
+.pin3 {
+  text-align: center;
 }

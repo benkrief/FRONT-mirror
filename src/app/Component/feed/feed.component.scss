@@ -1,29 +1,25 @@
-.description {
-  height: 300px ;
+.carousel {
   align-items: center;
-  width: 300%;
-  border: 1px solid black;
-  text-align: center;
-  margin: 20px;
-}
-
-.titre {
-  height: 100px;
-  align-items: center;
-  width: 200px;
-  border: 1px solid black;
-}
-
-.container {
-  margin-top: 90px;
-  height: 400px;
   position: absolute;
-  top: 2%;
-  left: 42%;
+  width: 40%;
+  top: 15%;
+  left: 30%;
+  margin: 10px;
 }
 
-.baniere {
-  flex-direction: row;
-  margin-top: 90px;
-  position: sticky;
+.carousel-items {
+  overflow-x: hidden;
+  margin-bottom: 10px;
 }
+
+.carousel-item {
+  flex: 1 0 250px;
+}
+
+.card {
+  border: 3px solid black;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+}
+
