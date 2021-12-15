@@ -16,7 +16,6 @@ export class ModalPostCreationComponent implements OnInit {
   {}
   // service ne doit pas etre public todo: voir pourquoi ça marche pas en private n
   public pic: any = ''
-  public file :File
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -48,8 +47,8 @@ export class ModalPostCreationComponent implements OnInit {
   onFileSelected(event):void {
     let reader = new FileReader();
     if(event.target.files && event.target.files.length > 0) {
-      this.file = event.target.files[0];
-      reader.readAsDataURL(this.file);
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
       reader.onload = () => {
         this.pic = reader.result;
       };
