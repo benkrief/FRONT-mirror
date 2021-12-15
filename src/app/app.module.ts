@@ -23,6 +23,7 @@ import { MyItineraryComponent } from './Component/my-itinerary/my-itinerary.comp
 import {MatCardModule} from "@angular/material/card";
 import { BtnPlanMyTripComponent } from './Component/btn-plan-my-trip/btn-plan-my-trip.component';
 import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-my-trip-pop-up.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -42,15 +43,15 @@ import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-m
     PlanMyTripPopUpComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      FormsModule,
+      BrowserAnimationsModule,
+      MaterialModule,
+      ReactiveFormsModule,
+      MatButtonModule,
+      MatStepperModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
