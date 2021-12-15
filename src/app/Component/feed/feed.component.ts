@@ -12,14 +12,16 @@ export class FeedComponent implements OnInit {
   posts: Post[] = [
     {
       uuid: "",
-      title: "test titre",
-      description: "description 1",
+      pic: "",
+      legende: "test legende",
+      adresse: "10 rue 1",
 
     },
     {
       uuid: "",
-      title: "test titre1",
-      description: "description 2"
+      pic: "",
+      legende: "test lengende 2",
+      adresse: "10 rue 2",
     }
   ]
 

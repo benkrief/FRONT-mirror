@@ -18,6 +18,7 @@ import {FeedComponent} from './Component/feed/feed.component';
 import {MaterialModule} from "./Material/material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -32,16 +33,17 @@ import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.
     FeedComponent,
     NavigationBarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatStepperModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

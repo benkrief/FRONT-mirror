@@ -1,21 +1,55 @@
-<form [formGroup]="form" class="normal-form" style="height: 300px" style="width: 300px">
-  <mat-grid-list cols="1" rows="2" rowHeight="250px">
-    <mat-grid-tile>
-      <div class="controles-container">
-        <input type="hidden" formControlName="$key">
-        <mat-form-field>
-          <input formControlName="titre" matInput placeholder="Titre">
-        </mat-form-field>
-        <mat-form-field>
-          <input formControlName="description" matInput placeholder="Description">
-        </mat-form-field>
+<mat-stepper>
+  <mat-step [stepControl]="firstFormGroup" label="Photo">
+    <form [formGroup]="firstFormGroup">
+      <mat-grid-list cols="1" rows="2" rowHeight="250px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <input type="hidden" formControlName="$key">
+            <div>
+            <button type="button" mat-raised-button (click)="fileInput.click()" >Choose File</button>
+            <input hidden (change)="next.click();onFileSelected($event)" #fileInput  formControlName="pic" type="file" accept="image/png, image/jpeg" id="file">
+              <button hidden matStepperNext #next ></button>
+
+            </div>
+          </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+      <div>
+        <button mat-button (click)="postClickCancel()">Annuler</button>
+        <button mat-button matStepperNext>Next</button>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <div class="controles-container">
-        <button (click)="postClickCancel()">Annuler</button>
-        <button>Poster</button>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Légende">
+    <form  [formGroup]="secondFormGroup" (submit)="onFormSumbit()">
+      <mat-grid-list cols="1" rows="3" rowHeight="250px">
+        <mat-grid-tile>
+          <mat-form-field>
+            <img src="{{pic}}" alt="" style="width: 210px">
+            <input hidden formControlName="pic"  matInput id="getPic">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="1" rows="2" rowHeight="250px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-form-field appearance="fill">
+              <mat-label>Légende</mat-label>
+              <input formControlName="legende" matInput placeholder="Légende" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Adresse</mat-label>
+              <input formControlName="adresse" matInput placeholder="Adresse" required>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button type="submit">Poster</button>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
+    </form>
+
+
+  </mat-step>
+</mat-stepper>
