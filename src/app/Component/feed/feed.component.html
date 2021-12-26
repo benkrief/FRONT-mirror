@@ -1,14 +1,20 @@
+<body class="page">
+<main>
 <section class="carousel">
   <ul class="carousel-items">
     <div class="carousel-item">
       <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
         <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
           <div *ngFor="let post of appState.appData.data.results" class="card">
-            <h5 class="card-title">{{post.title}}</h5>
-            <img src="https://placeimg.com/572/322/animals" class="card-image"/>
+            <div class="header-post">
+              <img class="profile" src="/assets/Images/Rihanna.jpg">
+            <h2 class="card-title">Rihanna</h2>
+              </div>
+            <div class="image">
+            <img src="https://placeimg.com/572/322/animals" class="card-image" alt="Responsive image"/>
+            </div>
             <div class="card-button">
-              <a href=""><i class="fa fa-2x fa-map-marker" aria-hidden="true" style="color:black;"></i> Ajouter à mon
-                itineraire</a>
+              <a href=""><i class="fa fa-2x fa-map-marker" aria-hidden="true" title="Ajouter à mon itinéraire" style="color: black"></i></a>
             </div>
             <div class="card-content">
               <p>{{post.description}}</p>
@@ -22,3 +28,5 @@
     </div>
   </ul>
 </section>
+</main>
+</body>

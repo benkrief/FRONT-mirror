@@ -1,25 +1,70 @@
+.header-post {
+  vertical-align: middle;
+  display: flex;
+  margin-left: 1%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.profile {
+  width: 50px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+.card-title {
+  text-align: start;
+  margin-left: 2%;
+  align-self: center;
+}
+
 .carousel {
-  align-items: center;
-  position: absolute;
   width: 40%;
   top: 15%;
   left: 30%;
-  margin: 10px;
+  padding-top: 8em;
+  padding-bottom: 8em;
+  margin: auto;
 }
 
 .carousel-items {
-  overflow-x: hidden;
-  margin-bottom: 10px;
+  overflow-x: paged-x-controls;
+  overflow-x: paged-y-controls;
+  margin: auto;
 }
 
 .carousel-item {
-  flex: 1 0 250px;
+  overflow-x: paged-x-controls;
+  overflow-x: paged-y-controls;
 }
 
 .card {
   border: 3px solid black;
-  margin: 10px;
+  margin: 8%;
   text-align: center;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: lightgray;
+}
+
+.card-image {
+  width: 95%;
+  height: auto;
+  margin: auto;
   align-items: center;
 }
 
+.card-button {
+  float: right;
+  padding-right: 1em;
+  vertical-align: middle;
+  margin-bottom: 2%;
+}
+
+.card-content {
+  float: left;
+  vertical-align: middle;
+  padding-top: 0.5em;
+  margin-bottom: 2%;
+  padding-left: 1%;
+}

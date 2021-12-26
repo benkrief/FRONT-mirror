@@ -23,6 +23,8 @@ export class ModalPostCreationComponent implements OnInit {
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
+      $key : '',
+      title : '',
       firstCtrl: ['', Validators.required],
       pic: new FormControl(""),
     });
