@@ -1,21 +1,38 @@
+
 <form [formGroup]="form" class="normal-form" style="height: 300px" style="width: 300px">
   <mat-grid-list cols="1" rows="2" rowHeight="250px">
     <mat-grid-tile>
       <div class="controles-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
-          <input formControlName="titre" matInput placeholder="Titre">
+          <input formControlName="description"
+                 matInput
+                 placeholder="Description">
         </mat-form-field>
         <mat-form-field>
-          <input formControlName="description" matInput placeholder="Description">
+        <input type="text"
+               placeholder="Address"
+               matInput
+               formControlName="adresse"
+               [formControl]="myControl"
+               [matAutocomplete]="auto"
+               (input)="search($event)"
+               [value]="selectedAddress">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let address of addresses" (click)="onSelect(address)">
+            {{ address }}
+          </mat-option>
+        </mat-autocomplete>
         </mat-form-field>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
       <div class="controles-container">
         <button (click)="postClickCancel()">Annuler</button>
-        <button>Poster</button>
+        <button (click)="postClickPost()">Poster</button>
       </div>
     </mat-grid-tile>
+    <mat-autocomplete>
+    </mat-autocomplete>
   </mat-grid-list>
 </form>

@@ -1,6 +1,8 @@
 @import '~mapbox-gl/dist/mapbox-gl.css';
 
-
+.map-drawer {
+  width: 500px;
+}
 
 .map-container {
   position: absolute;

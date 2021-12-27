@@ -23,6 +23,10 @@ import { MyItineraryComponent } from './Component/my-itinerary/my-itinerary.comp
 import {MatCardModule} from "@angular/material/card";
 import { BtnPlanMyTripComponent } from './Component/btn-plan-my-trip/btn-plan-my-trip.component';
 import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-my-trip-pop-up.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatDividerModule} from "@angular/material/divider";
+import { MapboxAutocompleteComponent } from './Component/mapbox-autocomplete/mapbox-autocomplete.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -39,19 +43,23 @@ import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-m
     MapComponent,
     MyItineraryComponent,
     BtnPlanMyTripComponent,
-    PlanMyTripPopUpComponent
+    PlanMyTripPopUpComponent,
+    MapboxAutocompleteComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatAutocompleteModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

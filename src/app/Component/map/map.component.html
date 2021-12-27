@@ -1,9 +1,11 @@
-<app-btn-plan-my-trip class="btnPmt"></app-btn-plan-my-trip>
-<div class="map" id="map" class="match-parent"></div>
+  <mat-drawer-container  class="match-parent" autosize>
+  <mat-drawer class="map-drawer"  #drawer>
+    <div><app-my-itinerary></app-my-itinerary></div>
+  </mat-drawer>
+    <mat-drawer-content>
+      <div class="map" id="map" class="match-parent" mode="side" opened></div>
+      <app-btn-plan-my-trip class="btnPmt"></app-btn-plan-my-trip>
+      <button mat-raised-button (click)=" drawer.toggle()">Toggle drawer</button>
+    </mat-drawer-content>
+  </mat-drawer-container>
 
-
-<img
-  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/260px-Tour_Eiffel_Wikimedia_Commons.jpg"
-  (click)="createMark(2.294481, 48.858370)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/DunePyla.JPG" (click)="createMark(-1.213334, 44.589652)">
-<app-btn-plan-my-trip class="btnPmt"></app-btn-plan-my-trip>
