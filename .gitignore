@@ -17,6 +17,9 @@ bower_components/
 # IDEs and editors
 .idea/
 
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
 # misc
 .sass-cache/
 connect.lock/

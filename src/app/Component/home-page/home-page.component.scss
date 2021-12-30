@@ -1,6 +1,5 @@
 body, input, select, textarea {
   font-size: 12pt;
-  margin: -2%;
 }
 
 body, input, select, textarea {
@@ -8,13 +7,14 @@ body, input, select, textarea {
   font-size: 15pt;
   font-weight: 300;
   line-height: 1.75em;
+  background-color: lightskyblue
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: white;
   font-weight: 700;
   line-height: 1em;
-  margin: 0 0 1em 0;
+  margin: auto;
   letter-spacing: -0.01em;
 }
 
@@ -90,8 +90,12 @@ input[type="button"].big,
 #banner h2 {
   font-size: 3.25em;
   line-height: 1.25em;
-  margin: 0 0 0.5em 0;
+  margin: auto;
   padding: 0;
+}
+
+.feed {
+  background-color: lightskyblue;
 }
 
 .title {
@@ -119,17 +123,15 @@ input[type="button"].big,
 }
 
 .item-content {
-  margin-left: 0.5rem;
-  margin-right: 2rem;
-  margin-bottom: 3%;
+  margin: auto;
 }
 
 #col {
-  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/13/19/world-160811_1280.png");
+  background-image: url("https://cdn.pixabay.com/photo/2019/05/31/16/16/australia-4242493_1280.jpg");
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 14em;
-  padding-bottom: 15em;
+  padding-top: 10em;
+  padding-bottom: 10em;
 }
 
 .title-3 {
@@ -138,27 +140,19 @@ input[type="button"].big,
   font-size: 4.5em;
 }
 
+.title-3 {
+  color: white;
+}
+
 .map-text {
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
-  letter-spacing: -0.015em;
   text-align: center;
-  margin-top: 5%;
-}
-
-.pin1 {
-  text-align: left;
-  margin-left: 20%;
-}
-
-.pin2 {
-  text-align: right;
-  margin-right: 25%;
-}
-
-.pin3 {
-  text-align: center;
+  margin: auto;
+  width: 25%;
+  color: white;
+  padding-top: 10%;
 }

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   APIEndpoint: "http://localhost:8080",
+  mapboxRouteEndpoint: "https://api.mapbox.com/directions/v5/mapbox",
   mapBoxKey: ""
 };
 

@@ -22,6 +22,9 @@ ul {
   list-style: disc;
   margin: 0 0 2em 0;
   padding-left: 1em;
+  padding-right: 2em;
+  float: right;
+  justify-content: flex-end;
 }
 
 ul li {
@@ -67,21 +70,30 @@ input[type="button"].big,
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   color: inherit;
   cursor: default;
-  height:72px;
-  line-height:72px;
+  height: 60px;
+  line-height: 72px;
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 1;
+}
 
+.logo-item{
+  padding-left: 1em;
+  width:62px;
+  height:60px;
+}
+
+.navbar{
+  justify-content: space-between;
 }
 
 #header nav {
   height: inherit;
   line-height: inherit;
-  position: absolute;
-  top: 0;
   vertical-align: middle;
-
+  display: flex;
+  align-self: flex-end;
 }
 
 #header nav > ul > li {
@@ -96,8 +108,4 @@ input[type="button"].big,
   border: 0;
   color: inherit;
   display: inline-block;
-
-
-}
-#header nav > ul > li > a i {
 }

@@ -4,11 +4,11 @@
       <mat-grid-list cols="1" rows="2" rowHeight="250px">
         <mat-grid-tile>
           <div class="controles-container">
-            <input type="hidden" formControlName="$key">
             <div>
-              <button type="button" mat-raised-button (click)="fileInput.click()" >Choose File</button>
-              <input hidden (change)="next.click();onFileSelected($event)" #fileInput  formControlName="pic" type="file" accept="image/png, image/jpeg" id="file">
-              <button hidden matStepperNext #next ></button>
+              <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+              <input hidden (change)="next.click();onFileSelected($event)" #fileInput formControlName="pic" type="file"
+                     accept="image/png, image/jpeg" id="file">
+              <button hidden matStepperNext #next></button>
             </div>
           </div>
         </mat-grid-tile>
@@ -20,32 +20,72 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Légende">
-    <form  [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
       <mat-grid-list cols="1" rows="3" rowHeight="250px">
         <mat-grid-tile>
           <mat-form-field>
             <img src="{{pic}}" alt="" style="width: 210px">
-            <input hidden formControlName="pic"  matInput id="getPic">
+            <input hidden formControlName="pic" matInput id="getPic">
           </mat-form-field>
         </mat-grid-tile>
       </mat-grid-list>
-      <mat-grid-list cols="1" rows="2" rowHeight="250px">
+      <mat-grid-list cols="1" rows="2" rowHeight="400px">
         <mat-grid-tile>
           <div class="controles-container">
             <mat-form-field appearance="fill">
-              <mat-label>Légende</mat-label>
-              <input formControlName="title" matInput placeholder="Légende" required>
+              <mat-label>Titre</mat-label>
+              <input formControlName="title" matInput placeholder="Titre" required>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label>Adresse</mat-label>
-              <input formControlName="description" matInput placeholder="Adresse" required>
+              <mat-label>Description</mat-label>
+              <input formControlName="description" matInput placeholder="Description" required>
             </mat-form-field>
           </div>
         </mat-grid-tile>
       </mat-grid-list>
       <div>
+        <button mat-button (click)="postClickCancel()">Annuler</button>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label="Adresse">
+    <form [formGroup]="thirdFormGroup">
+      <mat-grid-list cols="1" rows="2" rowHeight="400px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-form-field appearance="fill">
+              <mat-label>Lieu</mat-label>
+              <input formControlName="place" matInput placeholder="Lieu">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Rue</mat-label>
+              <input formControlName="street" matInput placeholder="Rue" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Complément adresse</mat-label>
+              <input formControlName="additionalAddress" matInput placeholder="Complément">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Ville</mat-label>
+              <input formControlName="city" matInput placeholder="Ville" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Code postal</mat-label>
+              <input formControlName="zip" matInput placeholder="Code postal" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Pays</mat-label>
+              <input formControlName="country" matInput placeholder="Pays">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div>
+        <button mat-button (click)="postClickCancel()">Annuler</button>
         <button mat-button matStepperPrevious>Précédent</button>
-        <button mat-button type="submit" (click)="createPost(secondFormGroup)">Poster</button>
+        <button mat-button type="submit" (click)="createPost(secondFormGroup, thirdFormGroup)">Poster</button>
       </div>
     </form>
   </mat-step>

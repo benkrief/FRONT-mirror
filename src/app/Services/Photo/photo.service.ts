@@ -5,6 +5,7 @@ import {Observable, throwError} from "rxjs";
 import {Response} from "../../Model/Response";
 import {catchError, tap} from "rxjs/operators";
 import {Photo} from "../../Model/Photo";
+import {Post} from "../../Model/Post";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,18 @@ export class PhotoService {
   }
 
   get$ = <Observable<Response<Photo>>>this.http.get<Response<Photo>>(`${this.apiUrl}/list`).pipe(
+    tap(console.log),
+    catchError(this.handleError)
+  );
+
+  create$ = (photo: any) => <Observable<Response<Photo>>>
+    this.http.post<Response<Photo>>(`${this.apiUrl}/create`, photo)
+      .pipe(
+        tap(console.log),
+        catchError(this.handleError)
+      );
+
+  getByName$ = (name: string) => <Observable<any>>this.http.get<Post>(`${this.apiUrl}/list/${name}`).pipe(
     tap(console.log),
     catchError(this.handleError)
   );

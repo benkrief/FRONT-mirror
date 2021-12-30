@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-
 @Component({
   selector: 'app-my-itinerary',
   templateUrl: './my-itinerary.component.html',

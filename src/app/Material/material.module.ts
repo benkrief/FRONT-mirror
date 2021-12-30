@@ -7,6 +7,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [],
@@ -18,8 +20,9 @@ import {MatCardModule} from "@angular/material/card";
     MatInputModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatCardModule
-
+    MatCardModule,
+    DragDropModule,
+    MatButtonModule
   ],
   exports: [
     MatGridListModule,
@@ -27,7 +30,9 @@ import {MatCardModule} from "@angular/material/card";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    DragDropModule,
+    MatButtonModule
   ]
 })
 export class MaterialModule {

@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
 import {Post} from "../../Model/Post";
 import {catchError, map, startWith} from "rxjs/operators";
 import {BehaviorSubject, Observable, of} from "rxjs";
@@ -6,6 +6,8 @@ import {State} from "../../Model/State";
 import {Response} from "../../Model/Response";
 import {StateEnum} from "../../Enum/state.enum";
 import {PostService} from "../../Services/Post/post.service";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {ItineraryService} from '../../Services/Itinerary/itinerary.service'
 
 @Component({
   selector: 'app-feed',
@@ -18,7 +20,7 @@ export class FeedComponent implements OnInit {
   readonly stateEnum = StateEnum;
   private dataSubject = new BehaviorSubject<Response<Post>>(null);
 
-  constructor(private postService: PostService) {
+  constructor(private postService: PostService, private itineraryService: ItineraryService) {
   }
 
   ngOnInit():
@@ -34,5 +36,24 @@ export class FeedComponent implements OnInit {
           return of({state: this.stateEnum.ERROR_STATE, error})
         })
       );
+  }
+
+  todo = this.itineraryService.getCoordinates();
+
+  drop(event: CdkDragDrop<Post[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+
+  addToTodo(coordinate: Post) {
+    this.itineraryService.addCoordinate(coordinate);
   }
 }

@@ -7,7 +7,6 @@ import {AppComponent} from './app.component';
 import {PostListComponent} from './Component/post-list/post-list.component';
 import {PostCreateComponent} from './Component/post-create/post-create.component';
 import {HomePageComponent} from './Component/home-page/home-page.component';
-import {PhotoListComponent} from './Component/photo-list/photo-list.component';
 import {NotFoundComponent} from './Component/not-found/not-found.component';
 
 import {ModalPostCreationComponent} from './Component/modal-post-creation/modal-post-creation.component';
@@ -20,7 +19,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NavigationBarComponent} from './Component/navigation-bar/navigation-bar.component';
 import { MapComponent } from './Component/map/map.component';
 import { MyItineraryComponent } from './Component/my-itinerary/my-itinerary.component';
-import {MatCardModule} from "@angular/material/card";
 import { BtnPlanMyTripComponent } from './Component/btn-plan-my-trip/btn-plan-my-trip.component';
 import { PlanMyTripPopUpComponent } from './Component/plan-my-trip-pop-up/plan-my-trip-pop-up.component';
 import {MatStepperModule} from "@angular/material/stepper";
@@ -31,7 +29,6 @@ import {MatStepperModule} from "@angular/material/stepper";
     PostListComponent,
     PostCreateComponent,
     HomePageComponent,
-    PhotoListComponent,
     NotFoundComponent,
     BtnCreatePostComponent,
     ModalPostCreationComponent,
