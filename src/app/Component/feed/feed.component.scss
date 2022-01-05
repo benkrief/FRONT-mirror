@@ -1,0 +1,29 @@
+.description {
+  height: 300px ;
+  align-items: center;
+  width: 300%;
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px;
+}
+
+.titre {
+  height: 100px;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.container {
+  margin-top: 90px;
+  height: 400px;
+  position: absolute;
+  top: 2%;
+  left: 42%;
+}
+
+.baniere {
+  flex-direction: row;
+  margin-top: 90px;
+  position: sticky;
+}

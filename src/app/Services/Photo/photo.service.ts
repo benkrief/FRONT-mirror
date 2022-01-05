@@ -4,6 +4,7 @@ import {environment} from "../../../environments/environment";
 import {Observable, throwError} from "rxjs";
 import {Response} from "../../Model/Response";
 import {catchError, tap} from "rxjs/operators";
+import {Photo} from "../../Model/Photo";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class PhotoService {
   constructor(private http: HttpClient) {
   }
 
-  get$ = <Observable<Response>>this.http.get<Response>(`${this.apiUrl}/list`).pipe(
+  get$ = <Observable<Response<Photo>>>this.http.get<Response<Photo>>(`${this.apiUrl}/list`).pipe(
     tap(console.log),
     catchError(this.handleError)
   );

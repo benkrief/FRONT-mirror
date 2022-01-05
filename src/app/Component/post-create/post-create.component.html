@@ -1,5 +1,5 @@
 <form #postForm="ngForm" (ngSubmit)="createPost(postForm)">
-  <input type="text" ngModel name="titre" required>
+  <input type="text" ngModel name="title" required>
   <input type="text" ngModel name="description" required>
   <button type="submit" [disabled]="postForm.invalid">
     <span> Ajout</span>
@@ -7,14 +7,11 @@
 </form>
 <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.state">
   <ng-container *ngSwitchCase="stateEnum.LOADED_STATE">
-    <div *ngFor="let post of appState.appData.data.posts">
-      <p>{{post.titre}} -   {{post.description}}</p>
+    <div *ngFor="let post of appState.appData.data.results">
+      <p>{{post.title}} -   {{post.description}}</p>
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="stateEnum.ERROR_STATE">
     <h1>Error</h1>
   </ng-container>
-
 </ng-container>
-
-
